@@ -1,0 +1,53 @@
+
+<% layout('boilerplate') -%>
+<div class="row mt-3">
+   <div class="offset-md-2 col-md-8">
+   <form action="http://localhost:8055/listings/<%=listing._id%>?_method=PUT" method="post"  class="needs-validation" novalidate>
+      <div class="mb-3">
+         <label for="title" class="form-label">Title</label>
+         <input id="title" class="form-control" type="text" name="editedData[title]" placeholder="Title: <%=listing.title%>" value="<%=listing.title%>" required>
+         <div class="invalid-feedback">
+            Please select a valid info
+         </div>
+      </div>
+      <div class="mb-3">
+         <label for="description" class="form-label">Description</label>
+         <textarea class="form-control" name="editedData[description]" id="description" cols="30" rows="10" placeholder=" Description: <%=listing.description%>" required ><%=listing.description%></textarea>
+         <div class="invalid-feedback">
+            Please select a valid info
+         </div>
+      </div>
+      <div class="mb-3">
+         <label for="image" class="form-label">Image</label>
+         <input id="image" class="form-control" type="text" name="editedData[image]" placeholder="Image url: <%=listing.image%>" value="<%=listing.image%>" required>
+         <div class="invalid-feedback">
+            Please select a valid info
+         </div>
+      </div>
+      <div class="row">
+         <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input id="price" class="form-control" type="number" name="editedData[price]" placeholder="Price: <%=listing.price%>" value="<%=listing.price%>" required>
+            <div class="invalid-feedback">
+               Please select a valid info
+            </div>
+         </div>
+         <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input id="country" class="form-control" name="editedData[country]" placeholder="Country: <%=listing.country%>" value="<%=listing.country%>" required>
+            <div class="invalid-feedback">
+               Please select a valid info
+            </div>
+         </div>
+      </div>
+      <div class="mb-3">
+         <label for="location" class="form-label">Location</label>
+         <input id="location" class="form-control" name="editedData[location]" placeholder="Location: <%=listing.location%>" value="<%=listing.location%>" required>
+         <div class="invalid-feedback">
+            Please select a valid info
+         </div>
+      </div>     
+    <button class="btn btn-danger mb-4 mt-4 btns">UPDATE</button>
+   </form>
+</div>
+</div>

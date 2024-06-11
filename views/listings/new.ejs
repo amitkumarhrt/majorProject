@@ -1,0 +1,58 @@
+<% layout('boilerplate') -%>
+<h3>Add New Listings</h3>
+<div class="row">
+    <div class="col-md-8 col-12 offset-md-2">
+    <form action="http://localhost:8055/listings" method="post" class="mt-4 needs-validation" novalidate>
+        <div>
+            <label for="title" class="form-label">Title</label>
+            <input class="form-control mb-3" id="title" name="lila[title]" type="text" placeholder="Merin hotels" required>
+            <div class="invalid-feedback">
+                Enter Valid Title!
+            </div>
+            <div class="valid-feedback">
+                good title!
+            </div>
+        </div>
+        <div>
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control mb-3" id="description" name="lila[description]" id="" cols="30" rows="10"  required></textarea>
+            <div class="invalid-feedback">
+                Enter Valid Description!
+            </div>
+        </div>
+        <div>
+            <label for="image" class="form-label">Image</label>
+            <input id="image" class="form-control mb-3" name="lila[image]" type="text" placeholder="Enter Image Link\URL">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label class="form-label" for="price">Price</label>
+                <input id="price" class="form-control mb-3" name="lila[price]" type="text" placeholder="3299/-"  required>
+                <div class="invalid-feedback">
+                    Enter Valid Data!
+                </div>
+            </div>
+            <div class="col-md-8">
+                <label class="form-label" for="country">Country</label>
+                <input class="form-control mb-3" id="country" name="lila[country]" type="text" placeholder="India"   required>
+                <div class="invalid-feedback">
+                    Enter Valid Data!
+                </div>
+            </div> 
+        </div>
+        <div>
+            <label class="form-label" for="location">Location</label>
+            <input class="form-control mb-3" id="location" name="lila[location]" type="text" placeholder="Hisar Sector 14, Haryana"   required>
+            <div class="invalid-feedback">
+                Enter Valid Data!
+            </div>
+        </div>            
+        <button class="btn btn-danger mt-4 mb-4 btns">submit</button>
+    </form>
+    </div>
+</div>
+    
+

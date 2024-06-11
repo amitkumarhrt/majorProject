@@ -1,0 +1,75 @@
+         <% layout('boilerplate.ejs') -%>
+         <div class="row">
+                <!-- <div class="col-8 offset-3">
+                    <h4><%=listing.title%></h4> 
+                </div>            -->
+                <div class="card card-listing mb-3 col-md-6 offset-md-3 show-card">
+                    <h4><%=listing.title%></h4> 
+                    <img src="<%=listing.image%>" class="card-img-top showIdImg" alt="Listing Image">
+                    <div class="card-body">
+                        <p class="card-text"></p><%=listing.description%></p>
+                        <p class="card-text">&#8377; <%=listing.price.toLocaleString('en-IN')%>/ night</p>
+                        <p class="card-text"><%=listing.country%></p>
+                        <p class="card-text"><%=listing.location%></p>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-6 
+                        ">
+                            <a href="http://localhost:8055/listings/<%=listing._id%>/edit" class="btn btn-danger col float-end">EDIT</a> 
+                        </div>
+                        <div class="col-6">
+                            <form action="http://localhost:8055/listings/<%=listing._id%>?_method=DELETE" method="post">
+                                <button class="btn btn-dark">Delete</button>
+                            </form> 
+                        </div>            
+                    </div> 
+                </div>                 
+            <div class="card card-listing col-md-6 offset-md-3 show-card">
+                <hr> 
+                <h5>Leave a Review</h5>                  
+                <form action="http://localhost:8055/listings/<%=listing._id%>/reviews"  novalidate method="post" class="card-body needs-validation">
+                    <div class="card-text">
+                        <label for="range" class="form-label">Rating</label>
+                        <input type="range" id="range" name="rating[rating]" class="form-range" min='1' max="5">
+                    </div>
+                    <div class="card-text">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea name="rating[comment]" id="message" cols="30" rows="4" class="form-control" required></textarea>
+                        <div class="invalid-feedback">
+                            Please provide a valid Review.
+                        </div>
+                    </div>
+                    <button class="btn btn-outline-secondary mt-2">Submit</button>
+                </form> 
+                <hr>
+                <div>                    
+                    <p><b>All Review </b></p>
+                    <div class="row">  
+                    <%for(review of listing.review){%>                                           
+                        <div class="card col-sm-5  mb-2 ms-3" >
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    Mr amit
+                                </h5>
+                                <p class="card-text">
+                                    <%=review.comment%> 
+                                </p>
+                                <p class="card-text">
+                                    <%=review.rating%> Stars                             
+                                </p>
+                            </div>
+                            <form action="http://localhost:8055/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE" method="post">
+                                <button class="btn btn-dark btn-sm mb-2">Delete</button>
+                            </form>
+                        </div>                    
+                        <%}%>
+                    </div>
+                </div>   
+                           
+            </div>
+                           
+            </div>
+
+            
+                
+    
